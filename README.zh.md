@@ -1,3 +1,11 @@
+# 本分支主要可见更改
+
+- 添加主页翻页提示文字
+- 提供使用[Hitokoto 一言](https://hitokoto.cn)替代静态Slogan的选项
+- 页脚处的版权所有信息从站点名称改为站长名
+- 添加[InstantClick](http://instantclick.io)预加载、FancyBox图片预览和基于NProgress的滚动进度条
+- 添加全站文字计数和单篇文章文字计数
+
 
 <h1>Material Theme</h1>
 

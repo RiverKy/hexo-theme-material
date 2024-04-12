@@ -198,5 +198,38 @@
             <%- site.data.head[i] %>
         <% } %>
     <% } %>
-
+    
+    <% if(theme.customized.instantclick===true) { %>
+        <!-- InstantClick Support-->
+        <script async src="/js/instantclick.js" data-no-instant></script>
+        <script data-no-instant>InstantClick.init();</script>
+        <% } %>
+        
+        <% if(theme.customized.fancybox===true && page.fancybox !==false) { %>
+        <!-- Fancybox Support -->
+            <!-- For theme: Default is false -->
+            <!-- For page: Default is true -->
+        <%- cssLsload({path:('css/jquery.fancybox.min.css'),key:'fancybox_css'}) %>
+        <%- jsLsload({path:('js/jquery.fancybox.min.js'),key:'fancybox_js'}) %>
+        <%- jsLsload({path:('js/fancybox.js'),key:'utils_js'}) %>
+        <% } %>
+        
+        <% if(theme.customized.scrollprogress===true) { %>
+        <script>
+            window.onscroll = function () {
+                NProgress.configure({ minimum: 0, showSpinner: false });
+                var Height = document.documentElement.scrollHeight;
+                var Top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+                var SeeHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+                var Nowhight = (Top / (Height - SeeHeight));
+                if (Height <= SeeHeight) {//如果整个网页的高度小于或者等于网页可见区域（没有进度条的情况）
+                    NProgress.done();
+                }
+                else {//有进度条的情况
+                    NProgress.set(Nowhight);
+                }
+            }
+        </script>
+        <% } %>
+        
 </head>

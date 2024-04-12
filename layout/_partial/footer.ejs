@@ -6,9 +6,10 @@
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;<%- config.title %>
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;<%- config.author %>
             <% if(theme.footer_text) { %>
                 <br>
+                <%- partial('_partial/sitewordcount') %>
                 <% if(Array.isArray(theme.footer_text)) { %>
                     <%- theme.footer_text.join('<br>') %>
                 <% } else { %>

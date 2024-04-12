@@ -17,15 +17,15 @@
     <link rel="dns-prefetch" href="https://imsun.github.io"/>
 <% } else if(theme.comment.use === "valine") { %>
     <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
-<% } else if(theme.comment.use.startsWith("disqus")) { %>
+    <!-- <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/> -->
+<% } else if(theme.comment.use && theme.comment.use.startsWith("disqus")) { %>
     <link rel="dns-prefetch" href="https://<%= theme.comment.shortname %>.disqus.com"/>
 <% } %>
 
 <% if(theme.analytics.baidu_site_id) { %>
     <link rel="dns-prefetch" href="https://hm.baidu.com"/>
 <% } if(theme.analytics.google_site_id) { %>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
 <% } if(theme.analytics.cnzz_site_id) { %>
     <link rel="dns-prefetch" href="https://s95.cnzz.com"/>
 <% } %>

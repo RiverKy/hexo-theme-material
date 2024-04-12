@@ -1,3 +1,11 @@
+# Visible differences from the fork source
+
+- Prompt text for page switch button
+- Option to use [Hitokoto 一言](https://hitokoto.cn) to replace static slogan text
+- Copyright info at the footer changed from site name to author name
+- [InstantClick](http://instantclick.io) preload, FancyBox image preview and page scrolling progess bar powered by NProgress
+- Word count for site and posts
+
 
 <h1>Material Theme</h1>
 

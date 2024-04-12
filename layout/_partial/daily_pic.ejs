@@ -2,16 +2,33 @@
 <div class="mdl-card <% if(theme.card_elevation) { %><%= 'mdl-shadow--' + theme.card_elevation + 'dp' %><% } %> daily-pic mdl-cell mdl-cell--8-col index-top-block">
 
     <!-- Pic & Slogan -->
+    
+    <% if(theme.uiux.slogan.use_hitokoto) { %>
+        <script>
+            fetch('https://v1.hitokoto.cn')
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    var hitokoto = document.getElementById('hitokoto');
+                    hitokoto.innerText = '『' + data.hitokoto + '』\n——「' + data.from + '」';
+                })
+                .catch(function (err) {
+                    console.error(err);
+                })
+        </script>
+    <% } %>
+
     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(<%= url_for(theme.img.daily_pic) %>)">
-        <p class="index-top-block-slogan"><a href="<%= theme.url.daily_pic %>">
-        <% if(theme.uiux.slogan) { %>
-            <% if(Array.isArray(theme.uiux.slogan)) { %>
-                <%- theme.uiux.slogan.join('<br>') %>
-            <% } else { %>
-                <%- theme.uiux.slogan %>
-            <% } %>
-        <% } %>
-        </a></p>
+        <p class="index-top-block-slogan" id="hitokoto"><a href="<%= theme.url.daily_pic %>">
+                <% if(theme.uiux.slogan.content) { %>
+                <% if(Array.isArray(theme.uiux.slogan.content)) { %>
+                <%- theme.uiux.slogan.content.join('<br>') %>
+                <% } else { %>
+                <%- theme.uiux.slogan.content %>
+                <% } %>
+                <% } %>
+            </a></p>
     </div>
 
     <!-- Avatar & Name -->

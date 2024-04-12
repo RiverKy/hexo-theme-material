@@ -33,7 +33,9 @@ scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "Hi, nice to meet you"
+    slogan: 
+        use_hitokoto: false # Set to true to enable Hitokoto, false to use the content in the field below
+        content: "Hi, nice to meet you"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
@@ -326,3 +328,11 @@ vendors:
     prettify:
     # Material Icons 3.0.1
     material_icons:
+
+customized:
+    # Fancybox (Click to check images) support
+    fancybox: true
+    # InstantClick (Pages preload) support
+    instantclick: true
+    # Scroll Progress bar support
+    scrollprogress: true
